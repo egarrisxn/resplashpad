@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
-import { ImageGridSkeleton } from '../../components/photos/ImageGridSkeleton'
 import { DEFAULT_QUERY_PARAM_VALUES } from '@/lib/constants'
+import { ImageGridSkeleton } from '../../components/photos/ImageGridSkeleton'
 import {
   ImageGrid,
   ImageWithPageIndex,

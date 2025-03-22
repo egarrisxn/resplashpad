@@ -1,4 +1,8 @@
-import { Button } from '@/components/ui/button'
+import { useState } from 'react'
+import { generatePath, Link, useLocation } from 'react-router'
+import { useQueryClient } from '@tanstack/react-query'
+import { DownloadIcon } from 'lucide-react'
+import { Blurhash } from 'react-blurhash'
 import { api } from '@/lib/api'
 import { ROUTES } from '@/lib/constants'
 import { photoKeys, userKeys } from '@/lib/queryKeys'
@@ -8,12 +12,8 @@ import {
   USER_DETAIL_PHOTOS_PAGE_INDEX,
   USER_DETAIL_PHOTOS_PER_PAGE,
 } from '@/pages/user-detail'
-import { useQueryClient } from '@tanstack/react-query'
-import { DownloadIcon } from 'lucide-react'
-import { Blurhash } from 'react-blurhash'
-import { generatePath, Link, useLocation } from 'react-router'
+import { Button } from '@/components/ui/button'
 import { ProfileImage } from '../core/ProfileImage'
-import { useState } from 'react'
 
 // This is a number you can play around with
 // you might even want different ones for desktop vs mobile depending on the images you're serving

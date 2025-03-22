@@ -1,6 +1,6 @@
+import { ComponentProps } from 'react'
 import { User } from '@/lib/schemas'
 import { cn } from '@/lib/utils'
-import { ComponentProps } from 'react'
 
 type ProfileImageProps = ComponentProps<'img'> & {
   profileImage: User['profile_image']

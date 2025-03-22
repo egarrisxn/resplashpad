@@ -2,19 +2,19 @@ import { expect, it } from 'vitest'
 import { formatImageFilename } from './utils'
 
 it('should format image filename', () => {
-  expect(formatImageFilename({ imageDescription: 'Hello World' })).toBe(
-    'hello_world'
+  expect(formatImageFilename({ imageDescription: 'Serene Mountain Vista' })).toBe(
+    'serene_mountain_vista'
   )
 
-  expect(formatImageFilename({ imageDescription: 'Hello World 123' })).toBe(
-    'hello_world_123'
+  expect(formatImageFilename({ imageDescription: 'Ancient Stone Bridge 42' })).toBe(
+    'ancient_stone_bridge_42'
   )
 
   expect(
-    formatImageFilename({ imageDescription: 'Hello...Worldlolok123!!' })
-  ).toBe('helloworldlolok123')
+    formatImageFilename({ imageDescription: 'Whimsical Clockwork Contraption!!!' })
+  ).toBe('whimsicalclockworkcontraption')
 
   expect(
-    formatImageFilename({ imageDescription: '.ok!-uhm,isthisgonnawork World' })
-  ).toBe('okuhmisthisgonnawork_world')
+    formatImageFilename({ imageDescription: '..Deep-Sea, Bioluminescent, Creature?' })
+  ).toBe('deepsea_bioluminescent_creature')
 })

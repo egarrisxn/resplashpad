@@ -1,7 +1,7 @@
 import { DEFAULT_QUERY_PARAM_VALUES } from '@/lib/constants'
-import { ImageGridItem } from './ImageGridItem'
 import { Photo } from '@/lib/schemas'
 import { breakpoints, useMediaQuery } from '@/hooks/useMediaQuery'
+import { ImageGridItem } from './ImageGridItem'
 
 export type ImageWithPageIndex = {
   image: Photo

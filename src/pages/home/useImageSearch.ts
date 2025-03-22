@@ -1,8 +1,9 @@
+import { useEffect } from 'react'
 import { useInfiniteQuery } from '@tanstack/react-query'
-import { type SearchParams } from '@/lib/schemas'
 import { photoKeys } from '@/lib/queryKeys'
 import { api } from '@/lib/api'
-import { useEffect } from 'react'
+import { type SearchParams } from '@/lib/schemas'
+
 
 export function useImageSearch({ params }: { params: SearchParams }) {
   const query = useInfiniteQuery({

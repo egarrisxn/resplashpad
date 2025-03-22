@@ -1,7 +1,7 @@
 import { z } from 'zod'
 import { env } from './env'
-import type { Photo, SearchParams, User } from './schemas'
 import { photoSchema, userSchema } from './schemas'
+import type { Photo, SearchParams, User } from './schemas'
 
 const BASE_URL = 'https://api.unsplash.com'
 
