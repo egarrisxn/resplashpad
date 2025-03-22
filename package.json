@@ -1,9 +1,23 @@
 {
   "name": "resplashpad",
-  "private": true,
+  "description": "Unsplash with React!",
   "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
   "type": "module",
+    "keywords": [
+    "typesctipt",
+    "react",
+    "tailwindcss",
+    "shadcnui",
+    "radix-ui",
+    "vite",
+    "vitest",
+    "vercel",
+    "unsplash"
+  ],
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
