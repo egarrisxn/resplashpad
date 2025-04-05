@@ -1,9 +1,9 @@
 import { FormEvent, useState, useCallback } from 'react'
 import { useNavigate, useSearchParams } from 'react-router'
 import { useIsFetching } from '@tanstack/react-query'
+import { Search as SearchIcon } from 'lucide-react'
 import { DEFAULT_QUERY_PARAM_VALUES, QUERY_PARAMS } from '@/lib/constants'
 import { photoKeys } from '@/lib/queryKeys'
-
 import {
   orderBySchema,
   colorSchema,
@@ -20,9 +20,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { Search as SearchIcon } from 'lucide-react'
 
-// Observed from the dev tools
+
 export const SEARCH_FORM_HEIGHT = 136
 
 const SORT_OPTIONS: Array<{ value: SearchParams['orderBy']; label: string }> = [
