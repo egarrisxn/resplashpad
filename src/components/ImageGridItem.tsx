@@ -3,17 +3,17 @@ import { generatePath, Link, useLocation } from 'react-router'
 import { useQueryClient } from '@tanstack/react-query'
 import { DownloadIcon } from 'lucide-react'
 import { Blurhash } from 'react-blurhash'
+import {
+  USER_DETAIL_PHOTOS_PAGE_INDEX,
+  USER_DETAIL_PHOTOS_PER_PAGE,
+} from '@/pages/user'
 import { api } from '@/lib/api'
 import { ROUTES } from '@/lib/constants'
 import { photoKeys, userKeys } from '@/lib/queryKeys'
 import { Photo } from '@/lib/schemas'
 import { cn, handleDownload } from '@/lib/utils'
-import {
-  USER_DETAIL_PHOTOS_PAGE_INDEX,
-  USER_DETAIL_PHOTOS_PER_PAGE,
-} from '@/pages/user-detail'
 import { Button } from '@/components/ui/button'
-import { ProfileImage } from '../core/ProfileImage'
+import { ProfileImage } from './ProfileImage'
 
 const MULTIPLIER_TO_TURN_ASPECT_RATIO_INTO_ROWS_TO_SPAN = 22
 

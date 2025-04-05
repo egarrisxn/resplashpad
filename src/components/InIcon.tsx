@@ -1,6 +1,6 @@
 import { ComponentProps } from 'react'
 
-export function ZoomInIcon(props: ComponentProps<'svg'>) {
+export function InIcon(props: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

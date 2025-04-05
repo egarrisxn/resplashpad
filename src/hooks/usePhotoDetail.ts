@@ -1,6 +1,6 @@
-import { api } from '@/lib/api'
-import { photoKeys } from '@/lib/queryKeys'
 import { useQuery } from '@tanstack/react-query'
+import { photoKeys } from '@/lib/queryKeys'
+import { api } from '@/lib/api'
 
 export function usePhotoDetail(id: string | undefined) {
   return useQuery({

@@ -1,11 +1,11 @@
 import { Route, Routes } from 'react-router'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-import { RootLayout } from './layouts/root/RootLayout'
+import { RootLayout } from './layouts/Root'
 import { ROUTES } from './lib/constants'
 import { HomePage } from './pages/home'
-import { PhotoDetailPage } from './pages/photo-detail'
-import { UserDetailPage } from './pages/user-detail'
+import { PhotoDetailPage } from './pages/photo'
+import { UserDetailPage } from './pages/user'
 
 const queryClient = new QueryClient()
 

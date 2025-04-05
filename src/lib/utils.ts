@@ -26,9 +26,9 @@ export async function handleDownload({
   URL.revokeObjectURL(objectUrl)
 }
 
-// Matches one or more whitespace characters (spaces, tabs, newlines)
+
 const WHITESPACE_REGEX = /\s+/g
-// Matches any character that is NOT a lowercase letter, number, or underscore
+
 const NON_ALPHANUMERIC_UNDERSCORE_REGEX = /[^a-z0-9_]/g
 
 export function formatImageFilename({

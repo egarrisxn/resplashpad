@@ -2,8 +2,8 @@ import { useCallback } from 'react'
 import { useSearchParams } from 'react-router'
 import { SearchParams } from '@/lib/schemas'
 import { DEFAULT_QUERY_PARAM_VALUES, QUERY_PARAMS } from '@/lib/constants'
-import { ImageWithPageIndex } from '@/components/photos/ImageGrid'
-import { useImageSearch } from './useImageSearch'
+import { ImageWithPageIndex } from '@/components/ImageGrid'
+import { useImageSearch } from '@/hooks/useImageSearch'
 import { SearchResults } from './SearchResults'
 
 export function HomePage() {

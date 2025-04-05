@@ -1,4 +1,4 @@
-import { FormEvent, useState, useCallback } from 'react'
+import { FormEvent, useState, useCallback, useId } from 'react'
 import { useNavigate, useSearchParams } from 'react-router'
 import { useIsFetching } from '@tanstack/react-query'
 import { Search as SearchIcon } from 'lucide-react'
@@ -10,7 +10,6 @@ import {
   SearchParams,
   ColorOption,
 } from '@/lib/schemas'
-import { useId } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import {
@@ -152,10 +151,19 @@ export function SearchForm() {
 
   return (
     <form
-      className="container sticky top-0 z-50 mx-auto flex flex-col justify-between gap-4 bg-background px-4 py-6 md:flex-row md:items-center md:gap-10 md:px-0"
+      className="container sticky top-0 z-50 mx-auto flex flex-col justify-between gap-4 bg-background px-4 py-6 md:flex-row md:items-center md:gap-8 lg:gap-10 md:px-2"
       onSubmit={handleSubmit}
     >
-      <div className="flex flex-1 items-center gap-4">
+      <div className='flex items-center'>
+       <span className="hidden md:block text-2xl font-black tracking-tighter">
+        Re.
+       </span>
+        <span className="md:hidden text-lg tracking-tighter">
+          <span className='font-black'>Resplashpad.</span> +100 million free high-resolution photos
+       </span>
+       </div>
+
+      <div className="flex flex-1 items-center gap-2">
         <div className="relative flex-1 items-center gap-2">
           <SearchIcon
             size={16}
@@ -182,7 +190,7 @@ export function SearchForm() {
             updateParams({ orderBy: orderBySchema.parse(value) })
           }
         >
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-[160px]">
             <SelectValue placeholder="Sort by" />
           </SelectTrigger>
           <SelectContent>
@@ -200,7 +208,7 @@ export function SearchForm() {
             updateParams({ color: colorSchema.parse(value) })
           }
         >
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-[160px]">
             <SelectValue placeholder="Filter by color" />
           </SelectTrigger>
           <SelectContent>

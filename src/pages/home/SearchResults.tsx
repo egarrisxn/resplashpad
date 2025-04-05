@@ -1,10 +1,10 @@
 import { useEffect, useRef } from 'react'
 import { DEFAULT_QUERY_PARAM_VALUES } from '@/lib/constants'
-import { ImageGridSkeleton } from '../../components/photos/ImageGridSkeleton'
+import { ImageGridSkeleton } from '@/components/ImageGridSkeleton'
 import {
   ImageGrid,
   ImageWithPageIndex,
-} from '../../components/photos/ImageGrid'
+} from '@/components/ImageGrid'
 
 type SearchResultsProps = {
   isLoading: boolean

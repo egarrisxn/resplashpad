@@ -1,17 +1,12 @@
 import { useParams } from 'react-router'
-import { useGetUser } from './useGetUser'
 import { MapPinIcon } from 'lucide-react'
 import { SearchParams } from '@/lib/schemas'
-import { useGetUserPhotos } from './useGetUserPhotos'
-import { ImageGrid } from '@/components/photos/ImageGrid'
-import { ImageGridSkeleton } from '@/components/photos/ImageGridSkeleton'
-import { ProfileImage } from '@/components/core/ProfileImage'
+import { useGetUser } from '@/hooks/useGetUser'
+import { useGetUserPhotos } from '@/hooks/useGetUserPhotos'
+import { ImageGrid } from '@/components/ImageGrid'
+import { ImageGridSkeleton } from '@/components/ImageGridSkeleton'
+import { ProfileImage } from '@/components/ProfileImage'
 
-// The reason for hardcoding and not doing what we did in the home page:
-// ...Unsplash API doesn't return results as paginated results for `/users/:username/photos` endpoint
-// Rather, they simply return an array of photos
-// However, we can decide how many photos we want to load
-// I KNOW so annoying, like why let me provide a page number if I can't paginate?!
 export const USER_DETAIL_PHOTOS_PAGE_INDEX = 1
 export const USER_DETAIL_PHOTOS_PER_PAGE = 50
 

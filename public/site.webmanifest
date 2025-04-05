@@ -1,6 +1,10 @@
 {
   "name": "Resplashpad",
   "short_name": "Resplash",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": ".",
   "icons": [
         {
       "src": "/web-app-manifest-192x192.png",
@@ -26,9 +30,5 @@
       "type": "image/png",
       "purpose": "maskable"
     }
-  ],
-  "theme_color": "#00e8ff",
-  "background_color": "#00e8ff",
-  "display": "standalone",
-  "start_url": "."
+  ]
 }

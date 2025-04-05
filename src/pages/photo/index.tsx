@@ -1,25 +1,26 @@
-import { ROUTES } from '@/lib/constants'
+import { useCallback, useEffect, useState } from 'react'
 import { generatePath, Link, Navigate, useParams } from 'react-router'
-import { usePhotoDetail } from './usePhotoDetail'
-import { Button } from '@/components/ui/button'
+import { useQueryClient } from '@tanstack/react-query'
+import { Blurhash } from 'react-blurhash'
 import { DownloadIcon } from 'lucide-react'
-import { SEARCH_FORM_HEIGHT } from '@/layouts/root/SearchForm'
-import { Badge } from '@/components/ui/badge'
+import { SEARCH_FORM_HEIGHT } from '@/layouts/SearchForm'
+import { userKeys } from '@/lib/queryKeys'
+import { ROUTES } from '@/lib/constants'
+import { api } from '@/lib/api'
 import { cn, handleDownload } from '@/lib/utils'
+import { usePhotoDetail } from '@/hooks/usePhotoDetail'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { breakpoints } from '@/hooks/useMediaQuery'
-import { useCallback, useEffect, useState } from 'react'
-import { ZoomOutIcon } from '@/icons/ZoomOut'
-import { ZoomInIcon } from '@/icons/ZoomIn'
-import { Blurhash } from 'react-blurhash'
-import { api } from '@/lib/api'
-import { useQueryClient } from '@tanstack/react-query'
-import { userKeys } from '@/lib/queryKeys'
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
+import { ProfileImage } from '@/components/ProfileImage'
+import { OutIcon } from '@/components/OutIcon'
+import { InIcon } from '@/components/InIcon'
 import {
   USER_DETAIL_PHOTOS_PAGE_INDEX,
   USER_DETAIL_PHOTOS_PER_PAGE,
-} from '../user-detail'
-import { ProfileImage } from '@/components/core/ProfileImage'
+} from '../user'
+
 
 const getOptimizedFullscreenUrl = (rawUrl: string) => {
   return `${rawUrl}&w=2560&dpr=2&fm=jpg&q=85&fit=max&auto=format`
@@ -201,7 +202,7 @@ export function PhotoDetailPage() {
               className="max-w-screen relative z-10 max-h-screen object-contain"
             />
 
-            <ZoomOutIcon className="absolute right-4 top-4 z-10 size-7 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+            <OutIcon className="absolute right-4 top-4 z-10 size-7 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           </button>
         </div>
       )}
@@ -219,7 +220,7 @@ export function PhotoDetailPage() {
           aria-label="Zoom into full image"
           onClick={handleFullscreenToggle}
         >
-          <ZoomInIcon className="absolute right-4 top-4 size-7 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+          <InIcon className="absolute right-4 top-4 size-7 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           <img
             srcSet={`
             ${image.urls.small} 400w,
