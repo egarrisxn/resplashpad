@@ -15,9 +15,6 @@ import {
 import { Button } from '@/components/ui/button'
 import { ProfileImage } from '../core/ProfileImage'
 
-// This is a number you can play around with
-// you might even want different ones for desktop vs mobile depending on the images you're serving
-// 22 seems to work well on both mobile and desktop
 const MULTIPLIER_TO_TURN_ASPECT_RATIO_INTO_ROWS_TO_SPAN = 22
 
 const FALLBACK_IMAGE_DESCRIPTION = 'Unsplash photo'
@@ -35,13 +32,6 @@ export function ImageGridItem({
 
   const queryClient = useQueryClient()
 
-  // We do height / width to maintain the right proportions for height specifically
-  // e.g height 800px and width 1200px
-  // 800 / 1200 = 0.66
-  // 0.66 means for every 1px of width, there are 0.66px of height
-  // 0.66 * 22 = 14.66
-  // Math.ceil(14.66) = 15
-  // So the image will span 15 rows
   const rowsToSpanBasedOnAspectRatio = Math.ceil(
     (image.height / image.width) *
       MULTIPLIER_TO_TURN_ASPECT_RATIO_INTO_ROWS_TO_SPAN
@@ -161,8 +151,6 @@ export function ImageGridItem({
     >
       {mobileHeader}
 
-      {/* Link by default are inline elements that won't span the full width of the parent */}
-      {/* Block span full width of parent and start on new lines */}
       <Link
         to={generatePath(ROUTES.photoDetail, { id: image.id })}
         state={{ background: location }}

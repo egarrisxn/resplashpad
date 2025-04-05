@@ -39,7 +39,6 @@ export function useImageSearch({ params }: { params: SearchParams }) {
         try {
           await query.fetchNextPage()
         } catch (error) {
-          // TODO: handle error
           console.error('Error loading pages:', error)
         }
       }

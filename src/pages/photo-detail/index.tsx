@@ -22,19 +22,12 @@ import {
 import { ProfileImage } from '@/components/core/ProfileImage'
 
 const getOptimizedFullscreenUrl = (rawUrl: string) => {
-  // Typical 4K monitor width is 3840px, but 2560px is often sufficient
-  // dpr=2 for retina displays
-  // fm=jpg for broad compatibility
-  // q=85 for good quality/size balance
-  // fit=max to maintain aspect ratio
-  // auto=format for browser-appropriate format
   return `${rawUrl}&w=2560&dpr=2&fm=jpg&q=85&fit=max&auto=format`
 }
 
 function PhotoDetailSkeleton() {
   return (
     <main className="container relative mx-auto flex w-full flex-col gap-4 pb-16">
-      {/* Header shimmer */}
       <div className="flex items-center gap-2 p-4">
         <div className="size-10 animate-pulse rounded-full bg-muted" />
         <div className="flex flex-col gap-2">
@@ -43,7 +36,6 @@ function PhotoDetailSkeleton() {
         </div>
       </div>
 
-      {/* Image shimmer */}
       <div className="mx-auto aspect-square w-full max-w-[900px] animate-pulse rounded-lg bg-muted md:aspect-[2/3]" />
     </main>
   )
@@ -71,8 +63,6 @@ export function PhotoDetailPage() {
   }, [isFullscreen])
 
   useEffect(() => {
-    // This fetch is to work around the unsplash request headers no cache
-    // In the real world, you only need `new Image()` to fetch, download and then store image in the browser cache
     if (isDesktop && image && !optimizedFullscreenUrl) {
       fetch(getOptimizedFullscreenUrl(image.urls.raw), {
         headers: {
@@ -191,15 +181,6 @@ export function PhotoDetailPage() {
             onClick={handleFullscreenToggle}
             style={{
               aspectRatio: `${image.width} / ${image.height}`,
-              // width / height = aspect ratio
-              // Let's say we have an image that's 4000x3000.
-              // 4000 / 3000 = 1.33
-              // This number tells us "for every 1 unit of height, we need 1.33 units of width"
-              // Then 100vh represents the full viewport height:
-              // If viewport is 800px high, 100vh = 800px
-              // Finally, calc(100vh * 1.33):
-              // 800px * 1.33 = 1064px
-              // This tells us "to maintain this image's proportions at full viewport height, we need 1064px of width"
               maxWidth: `min(100vw, calc(100vh * ${image.width} / ${image.height}))`,
             }}
           >
@@ -244,7 +225,6 @@ export function PhotoDetailPage() {
             ${image.urls.small} 400w,
             ${image.urls.regular} 1080w
           `}
-            // From 768px and up, 900px or less if 100vw is less than 900px
             sizes="(min-width: 768px) min(900px, 100vw), 100vw"
             src={image.urls.regular}
             alt={image.description || 'Unsplash photo'}
@@ -254,7 +234,6 @@ export function PhotoDetailPage() {
       </div>
 
       <div className="flex flex-col gap-4 p-4 md:px-0">
-        {/* city and country can still be null */}
         {image.location && image.location.city && image.location.country && (
           <div className="flex items-center gap-2">
             <span className="font-bold text-primary">Location: </span>
