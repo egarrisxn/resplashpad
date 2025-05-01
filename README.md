@@ -19,8 +19,6 @@ This app leverages a modern tech stack for a smooth developer experience:
 - **Linting & Formatting**:
   - [ESLint](https://eslint.org/) – Enforces code quality and best practices.
   - [Prettier](https://prettier.io/) – Automatic code formatting for consistency.
-- **UI Components**: [shadcn/ui](https://ui.shadcn.com/) – A flexible, customizable UI component library.
-- **Icons**: [lucide-react](https://lucide.dev/) – Crisp, open-source React icons.
 
 ## **Before You Begin**
 
