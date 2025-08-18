@@ -5,17 +5,6 @@
   "license": "MIT",
   "private": true,
   "type": "module",
-    "keywords": [
-    "typesctipt",
-    "react",
-    "tailwindcss",
-    "shadcnui",
-    "radix-ui",
-    "vite",
-    "vitest",
-    "vercel",
-    "unsplash"
-  ],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "vite",
